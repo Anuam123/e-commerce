@@ -29,10 +29,11 @@ use App\Http\Controllers\Admin\HomeSlider\HomeSliderController;
 use App\Http\Controllers\Admin\HomeBanner\HomeBannerController;
 
 use App\Http\Controllers\Admin\AddProduct\AddProductController;
-
+use App\Http\Controllers\Admin\OrderCoupon\OrderCouponController;
 use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
 
 use App\Models\Category;
+
 
 use App\Models\SubCategory;
 
@@ -223,6 +224,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         //product Review
         Route::resource('product_review', ProductReviewController::class);
+
+        //order and coupons
+        Route::resource('order_coupon', OrderCouponController::class);
     });
 });
 
