@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+<<<<<<< HEAD
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
 use App\Models\HomeSlider;
 use App\Models\HomeBanner;
 use App\Models\ProductGeneral;
 use App\Models\ProductImageItem;
+=======
+>>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 
 class HomeController extends Controller
 {
@@ -31,6 +34,7 @@ class HomeController extends Controller
     public function index()
     {
 
+<<<<<<< HEAD
     $categories = Category::select('*')
     ->where('status', '=', 'Show')
     ->where('show_on_home','=','Yes')->get(); 
@@ -68,6 +72,9 @@ class HomeController extends Controller
     'subcategories', 'subsubcategories', 'homeSlider', 'banners', 
     'new_arrival', 'trending_offers', 'best_seller', 
     'personalised_gifts', 'more_gifts','corporate_gifts'));
+=======
+        return view('home');
+>>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 
     }
 }

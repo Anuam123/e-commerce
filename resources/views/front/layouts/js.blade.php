@@ -277,6 +277,7 @@
     });
 </script>
 <script>
+<<<<<<< HEAD
     //Commented By Sumit ---26/12/2024
   //  $(window).on('load', function() {
     //    var delayMs = 1500; // delay in milliseconds
@@ -285,6 +286,15 @@
         //    $('#myModal').modal('show');
         //}, delayMs);
    // });
+=======
+    $(window).on('load', function() {
+        var delayMs = 1500; // delay in milliseconds
+
+        setTimeout(function() {
+            $('#myModal').modal('show');
+        }, delayMs);
+    });
+>>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 </script>
 <script>
     $(document).on("click", ".qty-plus", function() {
