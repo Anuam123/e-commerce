@@ -1,0 +1,67 @@
+@media only screen and (max-width: 767px)  {
+   .motif-woocommerce-product-gallery {
+        width: 100% !important;
+        /*float: left;
+        margin-right: 4.347826087%;*/
+    } 
+}
+.zoom-gallary ul li {
+    display: block !important;
+    width: 76px;
+
+    padding: 5px 6px;
+    cursor: pointer;
+    margin-right: 2px;
+}
+.zoom-feature-image {
+    width: 80%;
+    float: right;
+}
+.zoom-gallary {
+    width: 16%;
+    float:left;
+    padding-top: 0px;
+}
+.zoom-feature-image .motif-main_thumbnail {
+  width: 100%;
+  float: left;
+  min-height: 410px;
+}
+/* .motif-woocommerce-product-gallery {
+    width: 39.1304347826%;
+    float: left;
+    margin-right: 4.347826087%;
+} */
+.motif-woocommerce-product-gallery {
+    width: 100%;
+    float: left;
+    /* margin-right: 4.347826087%; */
+}
+.zoom-gallary ul {
+    margin: 0px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+span.motif_zoom_fancybox_btn {
+    top: 0;
+    left: 0;
+}
+span.motif_zoom_fancybox_btn {
+    position: absolute;
+    cursor: pointer;
+    z-index: 9999;
+    width: 26px;
+    height: 26px;
+    background: url(../images/icons-lightbox.html) no-repeat;
+    background-position: 0 0;
+}
+span.motif_zoom_fancybox_btn:hover {
+    background-position: 0 -27px;
+}
+.details {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
