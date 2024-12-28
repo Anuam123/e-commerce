@@ -29,19 +29,13 @@ use App\Http\Controllers\Admin\HomeSlider\HomeSliderController;
 use App\Http\Controllers\Admin\HomeBanner\HomeBannerController;
 
 use App\Http\Controllers\Admin\AddProduct\AddProductController;
-<<<<<<< HEAD
 
-=======
 use App\Http\Controllers\Admin\OrderCoupon\OrderCouponController;
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
-
+use App\Http\Controllers\front\MyAccountController;
 use App\Models\Category;
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 use App\Models\SubCategory;
 
 use App\Models\SubSubCategory;
@@ -81,7 +75,6 @@ Route::get('/clear-cache-all', function () {
     dd("Cache Clear All");
 });
 
-<<<<<<< HEAD
 //Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
@@ -92,16 +85,13 @@ Route::get('/', function () {
     ->where('show_on_home','=','Yes')->get(); 
     //dd($categories); 
 
-=======
 Route::get('/', function () {
 
     $categories = Category::all();
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
     $subcategories = SubCategory::all();
     $subsubcategories = Subsubcategory::all();
     $homeSlider = HomeSlider::all();
     $banners = HomeBanner::all();
-<<<<<<< HEAD
     $new_arrival = ProductGeneral::select('*')
     ->where('show_in_new_arrival', '=', 'yes')->get();
 
@@ -137,7 +127,6 @@ Route::get('/', function () {
 
 // Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-=======
     $new_arrival = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
 
     $trending_offers = ProductGeneral::select('*')->where('show_in_tranding_offers', '=', 'yes')->get();
@@ -157,7 +146,6 @@ Route::get('/', function () {
     return view('welcome', compact('categories', 'subcategories', 'subsubcategories', 'homeSlider', 'banners', 'new_arrival', 'trending_offers', 'best_seller', 'personalised_gifts', 'more_gifts'));
 });
 
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 Auth::routes();
 
 Route::resource('myaccount', MyAccountController::class);
@@ -282,12 +270,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         //product Review
         Route::resource('product_review', ProductReviewController::class);
-<<<<<<< HEAD
-=======
 
         //order and coupons
         Route::resource('order_coupon', OrderCouponController::class);
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
     });
 });
 
