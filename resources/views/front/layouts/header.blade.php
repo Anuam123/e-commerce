@@ -368,7 +368,7 @@ height: 26px;">
 
                                     </div>
                                 </div>
-                                <a href="{{ route('login') }}"><i class="fa fa-user-circle"
+                                <a href="{{ route('user.login') }}"><i class="fa fa-user-circle"
                                         aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Login/SignUp</a>
                                 <a href="{{ route('myaccount.index') }}"><i class="fa fa-user-o"
                                         aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;My Account</a>
@@ -425,20 +425,20 @@ height: 26px;">
                             <ul class="navbar-nav ml-auto mr-auto">
                                 <li><a class="nav-link nav_item" href="/"><i class="fa fa-home home-icon-p"
                                             aria-hidden="true"></i></a></li>
-                                @foreach ($categories as $category)
+                                @foreach (CustomHelper::categories() as $category)
                                     <li class="dropdown dropdown-mega-menu">
                                         <a class="dropdown-toggle nav-link" href="#"
                                             data-toggle="dropdown">{{ $category->category_name }}</a>
                                         <div class="dropdown-menu">
                                             <ul class="mega-menu d-lg-flex">
-                                                @foreach ($subcategories as $subcategory)
+                                                @foreach (CustomHelper::sub_category() as $subcategory)
                                                     @if ($subcategory->category_id == $category->id)
                                                         <li class="mega-menu-col col-lg-4">
                                                             <ul>
                                                                 <li class="dropdown-header">
                                                                     {{ $subcategory->sub_category_name }}</li>
                                                                 <li>
-                                                                    @foreach ($subsubcategories as $subsubcategory)
+                                                                    @foreach (CustomHelper::sub_sub_category() as $subsubcategory)
                                                                         @if ($subsubcategory->sub_category_id == $subcategory->id)
                                                                             <a class="dropdown-item nav-link nav_item"
                                                                                 href="{{ url('/products', $subsubcategory->id) }}">

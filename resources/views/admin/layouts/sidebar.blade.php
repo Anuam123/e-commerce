@@ -147,10 +147,10 @@
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
 
-                    <li><a href="#"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Customes List</span></a>
+                    <li><a href="{{route('users.index')}}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Customes List</span></a>
                     </li>
-                    <li><a href="#"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Customers Default List</span></a>
-                    </li>
+                    {{-- <li><a href="#"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Customers Default List</span></a>
+                    </li> --}}
 
                 </ul>
             </div>
