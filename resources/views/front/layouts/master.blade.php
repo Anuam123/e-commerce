@@ -258,12 +258,7 @@
     </script>
     <!-- offer pop modal -->
     <!-- <div class="modal fade" id="myModal" style="display:none;"> -->
-<<<<<<< HEAD
-    <!--Commented By Popup Show-->
-   <!-- <div class="modal fade" id="myModal">
-=======
     <div class="modal fade" id="myModal">
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content offer-bg-205">
                 <div class="modal-header">
@@ -277,11 +272,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    </div>-->
-=======
     </div>
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
 
     <!-- //mobile footer bottom menu -->
     <!-- whats app -->
