@@ -19,6 +19,11 @@ use App\Http\Controllers\Admin\AddProduct\AddProductController;
 use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
 use App\Http\Controllers\front\UserRegistrationController;
 use App\Models\Category;
+use App\Http\Controllers\Admin\OrderCoupon\OrderCouponController;
+use App\Http\Controllers\front\MyAccountController;
+
+
+
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
 use App\Models\HomeSlider;
@@ -55,31 +60,51 @@ Route::get('user-registration', [UserRegistrationController::class, 'UserRegistr
 Route::post('user-register', [UserRegistrationController::class, 'register'])->name('registers');
 Route::post('login-user', [UserRegistrationController::class, 'login'])->name('login.user');
 
+//Route::get('/', [HomeController::class, 'index'])->name('index');
+
+
+
 Route::get('/', function () {
 
-    $categories = Category::all();
+    $categories = Category::select('*')
+    ->where('status', '=', 'Show')
+    ->where('show_on_home','=','Yes')->get(); 
     $subcategories = SubCategory::all();
     $subsubcategories = Subsubcategory::all();
     $homeSlider = HomeSlider::all();
     $banners = HomeBanner::all();
-    $new_arrival = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
+    $new_arrival = ProductGeneral::select('*')
+    ->where('show_in_new_arrival', '=', 'yes')->get();
 
-    $trending_offers = ProductGeneral::select('*')->where('show_in_tranding_offers', '=', 'yes')->get();
+    $trending_offers = ProductGeneral::select('*')
+    ->where('show_in_tranding_offers', '=', 'yes')->get();
 
-    $best_seller = ProductGeneral::select('*')->where('show_in_best_seller', '=', 'yes')->get();
+    $best_seller = ProductGeneral::select('*')
+    ->where('show_in_best_seller', '=', 'yes')->get();
 
-    $personalised_gifts = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
+    $personalised_gifts = ProductGeneral::select('*')
+    ->where('show_in_new_arrival', '=', 'yes')->get();
 
-    $more_gifts = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
+    $more_gifts = ProductGeneral::select('*')
+    ->where('show_in_new_arrival', '=', 'yes')->get();
 
-    $corporate_gifts = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
+    $corporate_gifts = ProductGeneral::select('*')
+    ->where('show_in_corporate_gifts', '=', 'yes')->with('productImageItems')
+    ->limit(4)->get();
 
-    $struction_box = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
-
+    //dd($corporate_gifts);
+   
+    $struction_box = ProductGeneral::select('*')
+    ->where('show_in_new_arrival', '=', 'yes')->get();
 
     //dd($banners);
-    return view('welcome', compact('categories', 'subcategories', 'subsubcategories', 'homeSlider', 'banners', 'new_arrival', 'trending_offers', 'best_seller', 'personalised_gifts', 'more_gifts'));
-})->name('home');
+    return view('welcome',compact('categories', 
+    'subcategories', 'subsubcategories', 'homeSlider', 'banners', 
+    'new_arrival', 'trending_offers', 'best_seller', 
+    'personalised_gifts', 'more_gifts','corporate_gifts'));
+});
+
+
 
 Auth::routes();
 
@@ -207,17 +232,11 @@ Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin
         //product Review
         Route::resource('product_review', ProductReviewController::class);
         Route::resource('users', UserController::class);
+
+        //order and coupons
+        Route::resource('order_coupon', OrderCouponController::class);
     });
 });
-
-
-
-
-
-
-
-
-
 
 /*------------------------------------------
 --------------------------------------------
