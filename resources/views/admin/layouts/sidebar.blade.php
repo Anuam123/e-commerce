@@ -89,9 +89,9 @@
         <li class="bold"><a class="collapsible-header waves-effect waves-cyan " href="JavaScript:void(0)"><i class="material-icons">shopping_cart</i><span class="menu-title" data-i18n="Dashboard">Orders & Coupons</span></a>
             <div class="collapsible-body">
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                    <li><a href="#"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Add Coupons</span></a>
+                    <li><a href="{{ route('order_coupon.index') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Add Coupons</span></a>
                     </li>
-                    <li><a href="#"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">All Orders</span></a>
+                    <li><a href="{{ url('order_coupon.all_order') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">All Orders</span></a>
                     </li>
                 </ul>
             </div>
