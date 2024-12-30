@@ -1,55 +1,36 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\Role\RoleController;
 use App\Http\Controllers\Admin\User\UserController;
-
 use App\Http\Controllers\Admin\AdminAuthController;
-
 use App\Http\Controllers\Vendor\VendorAuthController;
-
 use App\Http\Controllers\front\VendorRegisterController;
-
 use App\Http\Controllers\Vendor\Vendorinfo\VendorInfoController;
-
 use App\Http\Controllers\Admin\Category\CategoryController;
-
 use App\Http\Controllers\Admin\SubCategory\SubCategoryController;
-
 use App\Http\Controllers\Admin\SubSubCategory\SubSubCategoryController;
-
 use App\Http\Controllers\Admin\ProductAttributeType\ProductAttributeTypeController;
-
 use App\Http\Controllers\Admin\ProductAttribute\ProductAttributeController;
-
 use App\Http\Controllers\Admin\HomeSlider\HomeSliderController;
-
 use App\Http\Controllers\Admin\HomeBanner\HomeBannerController;
-
 use App\Http\Controllers\Admin\AddProduct\AddProductController;
-
-use App\Http\Controllers\Admin\OrderCoupon\OrderCouponController;
-use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
 use App\Http\Controllers\Admin\OrderCoupon\AllOrderController;
-use App\Http\Controllers\front\MyAccountController;
+use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
+use App\Http\Controllers\front\UserRegistrationController;
 use App\Models\Category;
+use App\Http\Controllers\Admin\OrderCoupon\OrderCouponController;
+use App\Http\Controllers\front\MyAccountController;
+
 
 
 use App\Models\SubCategory;
-
 use App\Models\SubSubCategory;
-
 use App\Models\HomeSlider;
-
 use App\Models\HomeBanner;
-
 use App\Models\ProductGeneral;
-
-
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -75,8 +56,13 @@ Route::get('/clear-cache-all', function () {
 
     dd("Cache Clear All");
 });
+Route::get('user-login', [UserRegistrationController::class, 'show_login'])->name('user.login');
+Route::get('user-registration', [UserRegistrationController::class, 'UserRegistration'])->name('user.registration');
+Route::post('user-register', [UserRegistrationController::class, 'register'])->name('registers');
+Route::post('login-user', [UserRegistrationController::class, 'login'])->name('login.user');
 
 //Route::get('/', [HomeController::class, 'index'])->name('index');
+
 
 
 Route::get('/', function () {
@@ -84,11 +70,6 @@ Route::get('/', function () {
     $categories = Category::select('*')
     ->where('status', '=', 'Show')
     ->where('show_on_home','=','Yes')->get(); 
-    //dd($categories); 
-
-Route::get('/', function () {
-
-    $categories = Category::all();
     $subcategories = SubCategory::all();
     $subsubcategories = Subsubcategory::all();
     $homeSlider = HomeSlider::all();
@@ -125,27 +106,6 @@ Route::get('/', function () {
 });
 
 
-
-// Route::get('/', [HomeController::class, 'index'])->name('home.index');
-
-    $new_arrival = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
-
-    $trending_offers = ProductGeneral::select('*')->where('show_in_tranding_offers', '=', 'yes')->get();
-
-    $best_seller = ProductGeneral::select('*')->where('show_in_best_seller', '=', 'yes')->get();
-
-    $personalised_gifts = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
-
-    $more_gifts = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
-
-    $corporate_gifts = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
-
-    $struction_box = ProductGeneral::select('*')->where('show_in_new_arrival', '=', 'yes')->get();
-
-
-    //dd($banners);
-    return view('welcome', compact('categories', 'subcategories', 'subsubcategories', 'homeSlider', 'banners', 'new_arrival', 'trending_offers', 'best_seller', 'personalised_gifts', 'more_gifts'));
-});
 
 Auth::routes();
 
@@ -207,8 +167,9 @@ Route::get('vendor_register/{id}/delete', [VendorRegisterController::class, 'des
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
+
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
+Route::get('/login', [AdminAuthController::class, 'getLogin'])->name('adminLogin');
     Route::post('/login', [AdminAuthController::class, 'postLogin'])->name('adminLoginPost');
 
     Route::group(['middleware' => 'adminauth'], function () {
@@ -271,6 +232,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         //product Review
         Route::resource('product_review', ProductReviewController::class);
+        Route::resource('users', UserController::class);
 
         //order and coupons
         Route::resource('order_coupon', OrderCouponController::class);
@@ -279,15 +241,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('all_order', [AllOrderController::class, 'index'])->name('all_order');
     });
 });
-
-
-
-
-
-
-
-
-
 
 /*------------------------------------------
 --------------------------------------------

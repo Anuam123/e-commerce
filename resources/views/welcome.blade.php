@@ -987,11 +987,7 @@
                     border: 0;
                 }
             </style>
-<<<<<<< HEAD
-            <div class="quick-search1 pb-10" style="margin-top: 2rem !important;margin-bottom: 2rem !important;">
-=======
             <div class="quick-search1" style="margin-top: 2rem !important;margin-bottom: 2rem !important;">
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
                 <form id="quick-search-form" autocomplete="off">
                     <h3 class="quick-search-title1">
                         Find Gift For your Business and loved once
@@ -1053,21 +1049,13 @@
             </div>
         </div>
         <!---------//Desktop new Your New Arrival -------------->
-<<<<<<< HEAD
-        <section class="categories-carousel best_seller mt-10 mb-5" id="desktop">
-=======
         <section class="categories-carousel best_seller mt-5 mb-5" id="desktop">
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
             <div class="container-fluid container-gap-remove">
                 <div class="categories-bg">
                     <div class="category-title">
                         <h3>New Arrival </h3>
                         <a href="#" class="btn new-pro-view-btn">View All</a>
-<<<<<<< HEAD
-                    </div> 
-=======
                     </div>
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="product_slider carousel_slider owl-carousel owl-theme nav_style1 owl-loaded owl-drag owl-customs"
@@ -1091,18 +1079,10 @@
                                                             <a href="#" class="Customizavle-label">Product</a>
                                                         </div>
                                                         <div class="product_info">
-<<<<<<< HEAD
-                                                            <h6 class="product_title">
-                                                                <a href="#">
-                                                            {{ $na->product_name }}</a></h6>
-                                                            <div class="product_price">
-                                                                <span class="price">₹{{ $na->product_regular_price}}</span>
-=======
                                                             <h6 class="product_title"><a
                                                                     href="#">{{ $na->product_name }}</a></h6>
                                                             <div class="product_price">
                                                                 <span class="price">₹1099</span>
->>>>>>> 08aa241e9720285d64bce8430d5709e2d79eda7a
                                                                 <del>₹1899</del>
                                                                 <div class="on_sale"> <span>35% Off</span></div>
                                                             </div>
