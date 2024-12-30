@@ -91,7 +91,7 @@
                 <ul class="collapsible collapsible-sub" data-collapsible="accordion">
                     <li><a href="{{ route('order_coupon.index') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">Add Coupons</span></a>
                     </li>
-                    <li><a href="{{ url('order_coupon.all_order') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">All Orders</span></a>
+                    <li><a href="{{ route('all_order') }}"><i class="material-icons">radio_button_unchecked</i><span data-i18n="Modern">All Orders</span></a>
                     </li>
                 </ul>
             </div>
