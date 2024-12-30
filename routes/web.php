@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\AddProduct\AddProductController;
 
 use App\Http\Controllers\Admin\OrderCoupon\OrderCouponController;
 use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
+use App\Http\Controllers\Admin\OrderCoupon\AllOrderController;
 use App\Http\Controllers\front\MyAccountController;
 use App\Models\Category;
 
@@ -273,6 +274,9 @@ Route::group(['prefix' => 'admin'], function () {
 
         //order and coupons
         Route::resource('order_coupon', OrderCouponController::class);
+
+        //All Order list
+        Route::get('all_order', [AllOrderController::class, 'index'])->name('all_order');
     });
 });
 

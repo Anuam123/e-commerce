@@ -19,7 +19,7 @@ class OrderCouponController extends Controller
        // dd($coupons);
         return view('admin.order_coupon.index',compact('coupons'));
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
@@ -80,7 +80,7 @@ class OrderCouponController extends Controller
      */
     public function show(string $id)
     {
-        echo "Show data";
+       //echo "Show data";
     }
 
     /**
