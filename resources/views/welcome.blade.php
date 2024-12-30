@@ -50,7 +50,6 @@
         </div>
         <div class="container-fluid" id="topsectionfour">
             <div class="row">
-<<<<<<< HEAD
 
                @foreach($corporate_gifts as $key => $copgifts)
     <div class="col-md-6 col-lg-3 col-xs-6" style="padding-right: 0px !important; padding-left: 9px !important;">
@@ -73,8 +72,6 @@
         </div>
         <!-- START CATEGORY LOGO -->
         <div class="section small_pt pb-4" id="mobile">
-=======
->>>>>>> b243300760fc5cac5c8b71b50bd0d24a81a0b6c6
                 <div class="col-md-6 col-lg-3 col-xs-6" style="padding-right: 0px !important;padding-left: 9px !important;">
                     <a href=""><img src="images/home/teacherday1-800x800.webp" class=" pt-2"></a>
                 </div>
@@ -106,7 +103,6 @@
                         <div class="client_logo carousel_slider owl-carousel owl-theme nav_style3" data-dots="false"
                             data-nav="true" data-margin="30" data-loop="true" data-autoplay="true"
                             data-responsive='{"0":{"items": "2"}, "480":{"items": "3"}, "767":{"items": "4"}, "991":{"items": "5"}}'>
-<<<<<<< HEAD
                             @foreach($categories as $key => $cats) 
 
                             <div class="item">
@@ -120,8 +116,6 @@
                             @endforeach
                             
                            
-=======
->>>>>>> b243300760fc5cac5c8b71b50bd0d24a81a0b6c6
                             <div class="item">
                                 <div class="cl_logo">
                                     <a href="#">
