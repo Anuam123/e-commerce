@@ -103,7 +103,7 @@ Route::get('/', function () {
     'subcategories', 'subsubcategories', 'homeSlider', 'banners', 
     'new_arrival', 'trending_offers', 'best_seller', 
     'personalised_gifts', 'more_gifts','corporate_gifts'));
-});
+})->name('home');
 
 
 
