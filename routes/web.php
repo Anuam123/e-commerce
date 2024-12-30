@@ -16,7 +16,10 @@ use App\Http\Controllers\Admin\ProductAttribute\ProductAttributeController;
 use App\Http\Controllers\Admin\HomeSlider\HomeSliderController;
 use App\Http\Controllers\Admin\HomeBanner\HomeBannerController;
 use App\Http\Controllers\Admin\AddProduct\AddProductController;
+<<<<<<< HEAD
 use App\Http\Controllers\Admin\OrderCoupon\AllOrderController;
+=======
+>>>>>>> b243300760fc5cac5c8b71b50bd0d24a81a0b6c6
 use App\Http\Controllers\Admin\ProductReview\ProductReviewController;
 use App\Http\Controllers\front\UserRegistrationController;
 use App\Models\Category;
